@@ -22,17 +22,59 @@ class Result {
      */
 
     public static int sockMerchant(int n, List<Integer> ar) {
-    // Write your code here
-        return 0;
+        // Method 1:
+        // Sort the items in the list and go through each to get the count of pairs
+        // Sorting has the complexity of O(N*log N) => O(N)
+        // Looping through each item in the input letting the complexity be O(N)
+        // Ending up with having O(2N) => O(N) complexity
+        Collections.sort(ar);
+        int prevItem = ar.get(0);
+        int itemCount = 1;
+        int pairCount = 0;
+
+        for(int i = 1; i<ar.size(); i++){
+            if(prevItem == ar.get(i)){
+                itemCount++;
+            }
+            else{
+                pairCount += (itemCount - itemCount % 2) / 2;
+                itemCount = 1;
+                prevItem = ar.get(i);
+            }
+        }
+        pairCount += (itemCount - itemCount % 2) / 2;
+        return pairCount;
     }
 
+    public static int sockMerchant1(int n, List<Integer> ar) {
+        // Method 2:
+        // Create a dictionay, use each item as key and value as single item counts to calculate pairs
+        // Theoratically there's a chance each item in the input will be unique causing amount of key
+        // value pairs be equal to n so complexity becomes O(2n) => O(n)
+        int result = 0;
+        int dictKey = 0;
+        Dictionary<Integer, Integer> socks = new Hashtable<Integer, Integer>(); 
+        // populate hashtable
+        for(int i = 0; i<ar.size(); i++){
+            if(socks.get(ar.get(i)) == null)
+                socks.put(ar.get(i), 1);
+            else
+                socks.put(ar.get(i), socks.get(ar.get(i))+1);
+        }
+
+        // calculate pair count
+        Enumeration<Integer> keys = socks.keys();
+        while(keys.hasMoreElements()){
+            dictKey = keys.nextElement();
+            result += (socks.get(dictKey) - socks.get(dictKey) % 2) / 2;
+        }
+        return result;
+    }
 }
 
 public class Solution {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
-
         int n = Integer.parseInt(bufferedReader.readLine().trim());
 
         List<Integer> ar = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
@@ -40,11 +82,9 @@ public class Solution {
             .collect(toList());
 
         int result = Result.sockMerchant(n, ar);
-
-        bufferedWriter.write(String.valueOf(result));
-        bufferedWriter.newLine();
+        System.out.println(result);
 
         bufferedReader.close();
-        bufferedWriter.close();
     }
 }
+//1 1 1 1 2 3 3 3 3 3
