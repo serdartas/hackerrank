@@ -1,0 +1,1 @@
+This is the folder storing solutions I had for each question in interview preparation kit in HackerRank.com
