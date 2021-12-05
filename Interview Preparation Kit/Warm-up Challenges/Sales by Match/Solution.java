@@ -21,12 +21,14 @@ class Result {
      *  2. INTEGER_ARRAY ar
      */
 
-    public static int sockMerchant(int n, List<Integer> ar) {
+    public static int sockMerchant1(int n, List<Integer> ar) {
         // Method 1:
         // Sort the items in the list and go through each to get the count of pairs
-        // Sorting has the complexity of O(N*log N) => O(N)
+        // Sorting has the complexity of O(N*log N)
         // Looping through each item in the input letting the complexity be O(N)
-        // Ending up with having O(2N) => O(N) complexity
+        // Ending up with having O(N*log N + N) => O(N*log N) complexity
+        // Sorting is an expensive thing to do, so you should avoid it when there
+        // are less expensive solutions. Check the other solution suggested below.
         Collections.sort(ar);
         int prevItem = ar.get(0);
         int itemCount = 1;
@@ -46,7 +48,7 @@ class Result {
         return pairCount;
     }
 
-    public static int sockMerchant1(int n, List<Integer> ar) {
+    public static int sockMerchant(int n, List<Integer> ar) {
         // Method 2:
         // Create a dictionay, use each item as key and value as single item counts to calculate pairs
         // Theoratically there's a chance each item in the input will be unique causing amount of key
