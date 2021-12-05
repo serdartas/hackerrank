@@ -33,3 +33,10 @@ UDDDUDUU
 
 Sample Output
 1
+
+Sample Input
+12
+DDUUDDUDUUUD
+
+Sample Output
+2
