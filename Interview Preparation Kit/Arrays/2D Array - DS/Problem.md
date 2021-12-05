@@ -1,3 +1,4 @@
+# 2d Array - DS
 Given a 6 x 6 2D Array, arr:
 
 1 1 1 0 0 0
@@ -13,7 +14,7 @@ a b c
 e f g
 There are 16 hourglasses in arr. An hourglass sum is the sum of an hourglass' values. Calculate the hourglass sum for every hourglass in arr, then print the maximum hourglass sum. The array will always be 6 x 6.
 
-Example
+## Example
 arr =
 -9 -9 -9  1 1 1 
  0 -9  0  4 3 2
@@ -35,22 +36,22 @@ The highest hourglass sum is 28 from the hourglass beginning at row 1, column 2:
 
 Note: If you have already solved the Java domain's Java 2D Array challenge, you may wish to skip this challenge.
 
-Function Description
+## Function Description
 Complete the function hourglassSum in the editor below.
 
 hourglassSum has the following parameter(s):
 int arr[6][6]: an array of integers
 
-Returns
+## Returns
 int: the maximum hourglass sum
 
-Input Format
+## Input Format
 Each of the 6 lines of inputs arr[i] contains 6 space-separated integers arr[i][j].
 
-Output Format
+## Output Format
 Print the largest (maximum) hourglass sum found in arr.
 
-Sample Input
+## Sample Input
 1 1 1 0 0 0
 0 1 0 0 0 0
 1 1 1 0 0 0
@@ -58,6 +59,5 @@ Sample Input
 0 0 0 2 0 0
 0 0 1 2 4 0
 
-Sample Output
+## Sample Output
 19
-
