@@ -25,7 +25,7 @@ There are 16 hourglasses in arr. An hourglass sum is the sum of an hourglass' va
 
 *-9 -9 -9  1 1 1*
 
-* 0 -9  0  4 3 2*
+*0  -9  0  4 3 2*
 
 *-9 -9 -9  1 2 3*
 
@@ -45,6 +45,7 @@ The 16 hourglass sums are:
 *9,   17, 25, 18*
 
 The highest hourglass sum is 28 from the hourglass beginning at row 1, column 2:
+
 *0 4 3*
 
 *_ 1*
