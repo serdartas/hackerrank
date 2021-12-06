@@ -1,7 +1,13 @@
 # Linked Lists: Detect a Cycle
 A linked list is said to contain a cycle if any node is visited more than once while traversing the list. For example, in the following graph there is a cycle formed when node *5* points back to node *3*.
 
-[logo]: https://s3.amazonaws.com/hr-assets/0/1527604250-43ac8fbfaf-filtrationExample.png
+Inline-style: 
+![alt text](https://s3.amazonaws.com/hr-assets/0/1527604250-43ac8fbfaf-filtrationExample.png "Logo Title Text 1")
+
+Reference-style: 
+![alt text][logo]
+
+[logo]: https://s3.amazonaws.com/hr-assets/0/1527604250-43ac8fbfaf-filtrationExample.png "Logo Title Text 2"
 
 ## Function Description
 Complete the function has_cycle in the editor below. It must return a boolean true if the graph contains a cycle, or false.
