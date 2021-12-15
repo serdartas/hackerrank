@@ -15,19 +15,22 @@ class Result {
     // you
         int result = 0;
         int personsAhead;
-        for(int i=q.size()-1;i>=0;i--){//Loop backwards from last item to first
-            if(q.get(i)-(i+1)>2){//Bribed more than 2 person
+
+        for(int i = q.size()-1; i >= 0; i--){//Loop backwards from last item to first
+        
+            if (q.get(i) - (i+1) > 2) { //Bribed more than 2 person
                 System.out.println("Too chaotic");
                 return;
             }
 
-            if(q.get(i)<3)
+            if (q.get(i) < 3)
                 personsAhead = 0;
             else
                 personsAhead = q.get(i) - 2; // 1 position before original position
             
-            for(int j=personsAhead;j<i;j++){
-                if(q.get(j)>q.get(i)) result++;
+            for(int j = personsAhead; j < i; j++) {
+                if(q.get(j) > q.get(i))
+                    result++;
             }
         }
         System.out.println(result);
@@ -35,8 +38,8 @@ class Result {
 
     public static void minimumBribes1(List<Integer> q) {
     // Method 1: First eliminating too chaotic rule by checking if any number moved
-    // tmora than two positions ahead. Everyone in front of you that has a bigger 
-    // number than you  musat have bribed you. Hence starting from last and for each
+    // more than two positions ahead. Everyone in front of you that has a bigger 
+    // number than you  must have bribed you. Hence starting from last and for each
     // item counting bigger numbers ahead. 
     // Worst case scenario is close to O(N square)
         int result = 0;
